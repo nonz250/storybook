@@ -122,11 +122,19 @@ npm install
 
 ## Storybook 起動
 
+### 動的起動
+
 ```bash
 npm run storybook
 ```
 
 コンソールにリンクが表示されるので、クリックして確認してください。
+
+### 静的起動
+
+```bash
+build-storybook
+```
 
 ## docker
 
