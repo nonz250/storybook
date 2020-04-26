@@ -1,7 +1,7 @@
 import {storiesOf} from "@storybook/vue";
 
 // storybook components
-import AtomButton from "./components/AtomButton";
+import AtomButton from "./components/atoms/AtomButton";
 
 storiesOf('Button', module)
     .add('default', () => ({
