@@ -2,7 +2,7 @@
   <button
     :class="buttonClass"
   >
-    Button
+    <slot>Button</slot>
   </button>
 </template>
 
@@ -12,7 +12,6 @@ export default {
   props: {
     color: {
       type: String,
-      required: true,
       default: 'default',
     }
   },
