@@ -15,7 +15,7 @@
         :class="{'step-number__active': isActive(index), 'step-number__failed': isFailed(index), 'step-number__complete': isComplete(index)}"
       >
         <span v-if="isFailed(index)">✕</span>
-        <span v-else-if="isActive(index)">✓</span>
+        <span v-else-if="index + 1 === steps.length">✓</span>
         <span v-else>{{ index + 1 }}</span>
       </span>
       <span class="step-text">{{ step.text }}</span>
