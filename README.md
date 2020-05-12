@@ -155,3 +155,11 @@ docker-compose run --rm node npm storybook
 で起動したサーバーはdocker内に存在するのでアクセスできません。
 
 dockerコンテナのみで完結したい場合は別途ポート設定をして下さい。
+
+## eslint
+```bash
+# 構文チェック
+npm run eslint
+# 自動修正
+npm run eslint-fix
+```

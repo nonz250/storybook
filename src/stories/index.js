@@ -2,7 +2,8 @@ import {storiesOf} from '@storybook/vue';
 
 // storybook components
 import AtomButton from './components/atoms/AtomButton';
-import ListPage from "./pages/ListPage";
+import ListPage from './pages/ListPage';
+import StepperPage from './pages/StepperPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -42,4 +43,10 @@ storiesOf('List', module)
   .add('default', () => ({
     components: {ListPage},
     template: '<ListPage></ListPage>'
+  }));
+
+storiesOf('Stepper', module)
+  .add('default', () => ({
+    components: {StepperPage},
+    template: '<stepper-page></stepper-page>'
   }));

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "eslint": "eslint --ext .js,.vue src/stories",
+    "eslint-fix": "eslint --fix --ext .js,.vue src/stories"
   },
   "repository": {
     "type": "git",
