@@ -1,32 +1,37 @@
 <template>
   <div>
+    <navigator
+      v-model="drawer"
+      drawer
+    />
     <nav-drawer
       v-model="drawer"
-      title="title"
+      :title="title"
     >
       <nav-drawer-item>test01</nav-drawer-item>
       <nav-drawer-item>test02</nav-drawer-item>
     </nav-drawer>
-    <div>
-      <atom-button
-        @click="drawer = true"
+    <label>
+      title:
+      <input
+        v-model="title"
+        type="text"
       >
-        表示
-      </atom-button>
-    </div>
+    </label>
   </div>
 </template>
 
 <script>
-import NavDrawer from '../components/parts/NavDrawer';
-import AtomButton from '../components/atoms/AtomButton';
+import Navigator from '../components/parts/Navigator';
 import NavDrawerItem from '../components/parts/NavDrawerItem';
+import NavDrawer from '../components/parts/NavDrawer';
 export default {
-  name: 'NavDrawerPage',
-  components: {NavDrawerItem, AtomButton, NavDrawer},
+  name: 'NavigatorPage',
+  components: {NavDrawer, NavDrawerItem, Navigator},
   data() {
     return {
       drawer: false,
+      title: '',
     };
   }
 };

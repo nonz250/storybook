@@ -5,6 +5,7 @@ import AtomButton from './components/atoms/AtomButton';
 import ListPage from './pages/ListPage';
 import StepperPage from './pages/StepperPage';
 import NavDrawerPage from './pages/NavDrawerPage';
+import NavigatorPage from './pages/NavigatorPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -56,4 +57,10 @@ storiesOf('NavDrawer', module)
   .add('default', () => ({
     components: {NavDrawerPage},
     template: '<nav-drawer-page></nav-drawer-page>'
+  }));
+
+storiesOf('Navigator', module)
+  .add('default', () => ({
+    components: {NavigatorPage},
+    template: '<navigator-page></navigator-page>'
   }));

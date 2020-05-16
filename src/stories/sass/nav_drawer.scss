@@ -19,15 +19,15 @@
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
   &__header {
-    border-bottom: 3px double $gray;
+    border-bottom: 3px double $gray-1;
     &__title {
       font-weight: bold;
     }
   }
   &__item {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid $gray-1;
     &:hover {
-      background-color: $gray;
+      background-color: $gray-1;
       cursor: pointer;
       transition: 0.3s;
     }
