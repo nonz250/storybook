@@ -48,13 +48,16 @@ npm install vue-loader vue-template-compiler @babel/core babel-loader babel-pres
 
 # install css loader
 npm install style-loader css-loader sass-loader node-sass --save-dev
-npm rebuild node-sass 
+npm rebuild node-sass
 
 # install eslint
-npm install eslint --save-dev
+npm install eslint eslint-config-vue eslint-plugin-vue --save-dev
 
 # eslint setting
  ./node_modules/.bin/eslint --init
+
+# install bootstrap
+npm install bootstrap jquery popper.js --save-dev
 ```
 
 ### Eslint
