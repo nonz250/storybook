@@ -4,6 +4,7 @@ import {storiesOf} from '@storybook/vue';
 import AtomButton from './components/atoms/AtomButton';
 import ListPage from './pages/ListPage';
 import StepperPage from './pages/StepperPage';
+import NavDrawerPage from './pages/NavDrawerPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -49,4 +50,10 @@ storiesOf('Stepper', module)
   .add('default', () => ({
     components: {StepperPage},
     template: '<stepper-page></stepper-page>'
+  }));
+
+storiesOf('NavDrawer', module)
+  .add('default', () => ({
+    components: {NavDrawerPage},
+    template: '<nav-drawer-page></nav-drawer-page>'
   }));

@@ -30,5 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import "../../sass/button";
+    @import "../../sass/app";
 </style>
