@@ -18,4 +18,8 @@
     cursor: pointer;
     color: $gray-5;
   }
+  &__action {
+    margin-left: auto;
+    padding: 0 0.5rem;
+  }
 }
