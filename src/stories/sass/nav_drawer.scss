@@ -19,9 +19,17 @@
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
   &__header {
-    border-bottom: $gray 1px solid;
-    &__icon {
-
+    border-bottom: 3px double $gray;
+    &__title {
+      font-weight: bold;
+    }
+  }
+  &__item {
+    border-bottom: 1px solid $gray;
+    &:hover {
+      background-color: $gray;
+      cursor: pointer;
+      transition: 0.3s;
     }
   }
   background-color: white;

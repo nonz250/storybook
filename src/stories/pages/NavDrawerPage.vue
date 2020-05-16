@@ -3,7 +3,8 @@
     <nav-drawer
       v-model="drawer"
     >
-      test
+      <nav-drawer-item>test01</nav-drawer-item>
+      <nav-drawer-item>test02</nav-drawer-item>
     </nav-drawer>
     <div>
       <atom-button
@@ -18,9 +19,10 @@
 <script>
 import NavDrawer from '../components/parts/NavDrawer';
 import AtomButton from '../components/atoms/AtomButton';
+import NavDrawerItem from '../components/parts/NavDrawerItem';
 export default {
   name: 'NavDrawerPage',
-  components: {AtomButton, NavDrawer},
+  components: {NavDrawerItem, AtomButton, NavDrawer},
   data() {
     return {
       drawer: false,
