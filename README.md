@@ -58,6 +58,9 @@ npm install eslint eslint-config-vue eslint-plugin-vue --save-dev
 
 # install bootstrap
 npm install bootstrap jquery popper.js --save-dev
+
+# install fontawesome
+npm install --save-dev @fortawesome/fontawesome-free
 ```
 
 ### Eslint
