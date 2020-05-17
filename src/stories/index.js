@@ -12,33 +12,33 @@ storiesOf('Button', module)
     components: {AtomButton},
     template: '<AtomButton color="default"/>'
   }))
-  .add('secondary', () => ({
+  .add('outline', () => ({
     components: {AtomButton},
-    template: '<AtomButton color="secondary"/>'
+    template: '<AtomButton color="default" outline/>'
   }))
   .add('primary', () => ({
     components: {AtomButton},
-    template: '<AtomButton color="primary"/>'
+    template: '<AtomButton primary/>'
+  }))
+  .add('primary-outline', () => ({
+    components: {AtomButton},
+    template: '<AtomButton outline primary/>'
   }))
   .add('warning', () => ({
     components: {AtomButton},
-    template: '<AtomButton color="warning"/>'
+    template: '<AtomButton warning/>'
+  }))
+  .add('warning-outline', () => ({
+    components: {AtomButton},
+    template: '<AtomButton warning outline/>'
   }))
   .add('danger', () => ({
     components: {AtomButton},
-    template: '<AtomButton color="danger"/>'
+    template: '<AtomButton danger/>'
   }))
-  .add('info', () => ({
+  .add('danger-outline', () => ({
     components: {AtomButton},
-    template: '<AtomButton color="info"/>'
-  }))
-  .add('light', () => ({
-    components: {AtomButton},
-    template: '<AtomButton color="light"/>'
-  }))
-  .add('dark', () => ({
-    components: {AtomButton},
-    template: '<AtomButton color="dark"/>'
+    template: '<AtomButton danger outline/>'
   }));
 
 storiesOf('List', module)

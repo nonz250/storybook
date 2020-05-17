@@ -11,15 +11,40 @@
 export default {
   name: 'AtomButton',
   props: {
-    color: {
-      type: String,
-      default: 'default',
-    }
+    outline: {
+      type: Boolean,
+      default: false
+    },
+    primary: {
+      type: Boolean,
+      default: false
+    },
+    warning: {
+      type: Boolean,
+      default: false
+    },
+    danger: {
+      type: Boolean,
+      default: false
+    },
   },
   computed: {
     buttonClass() {
-      return 'btn btn-' + this.color;
-    }
+      const result = {'button': true};
+      let color = '';
+      if (this.primary) {
+        color = 'primary';
+      } else if (this.warning) {
+        color = 'warning';
+      } else if (this.danger) {
+        color = 'danger';
+      } else {
+        color = 'default';
+      }
+      result['button__' + color] = true;
+      result['button__' + color + '__outline'] = this.outline;
+      return result;
+    },
   },
   methods: {
     click() {

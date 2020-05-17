@@ -1,29 +1,48 @@
-.btn {
-  border: 1px solid #000000;
-  border-radius: 5px;
-  cursor: pointer;
+@mixin button-color($color, $text-color, $bg-color) {
+  border: 1px solid $color;
+  background-color: $color;
+  filter: drop-shadow(0.8px 0.8px 0.8px $color);
+  color: $text-color;
+  &:hover {
+    border: 1px solid $color;
+    background-color: white;
+    color: $color;
+    transition: 0.3s;
+    opacity: 0.8;
+  }
+  &__outline {
+    border: 1px solid $color;
+    background-color: white;
+    color: $color;
+    filter: none;
+
+    &:hover {
+      border: 1px solid $color;
+      background-color: $bg-color;
+      color: $color;
+      opacity: 1;
+    }
+  }
 }
-.btn-default {
-  background-color: gray;
-}
-.btn-secondary {
-  background-color: gray;
-}
-.btn-primary {
-  background-color: dodgerblue;
-}
-.btn-warning {
-  background-color: goldenrod;
-}
-.btn-danger {
-  background-color: red;
-}
-.btn-info {
-  background-color: lightsteelblue;
-}
-.btn-light {
-  background-color: aliceblue;
-}
-.btn-dark {
-  background-color: dimgrey;
+
+.button {
+  border-radius: 3px;
+  padding: 0.1rem 1rem;
+  outline: 0;
+
+  &__default {
+    @include button-color($gray-5, $gray-1, $gray-1);
+  }
+
+  &__primary {
+    @include button-color($blue, white, $light-blue);
+  }
+
+  &__warning {
+    @include button-color($orange, white, $light-orange);
+  }
+
+  &__danger {
+    @include button-color($red, white, $light-red);
+  }
 }
