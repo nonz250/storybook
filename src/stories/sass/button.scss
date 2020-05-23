@@ -3,6 +3,9 @@
   background-color: $color;
   filter: drop-shadow(0.8px 0.8px 0.8px $color);
   color: $text-color;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     border: 1px solid $color;
     background-color: white;
@@ -28,7 +31,7 @@
 .button {
   border-radius: 3px;
   padding: 0.1rem 1rem;
-  outline: 0;
+  outline: none;
 
   &__default {
     @include button-color($gray-5, $gray-1, $gray-1);
