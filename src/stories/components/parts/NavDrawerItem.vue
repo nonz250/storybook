@@ -2,7 +2,7 @@
   <div>
     <div
       class="nav-drawer__item p-2"
-      @click="click"
+      @click="$emit('click')"
     >
       <slot />
     </div>
@@ -12,11 +12,6 @@
 <script>
 export default {
   name: 'NavDrawerItem',
-  methods: {
-    click() {
-      this.$emit('click');
-    }
-  }
 };
 </script>
 
