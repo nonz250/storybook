@@ -1,0 +1,40 @@
+.text-form {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  transition: .3s;
+
+  &__default {
+    border-bottom: 1px solid $gray-3;
+
+    &:focus {
+      border-bottom: 1px solid $blue;
+    }
+  }
+}
+
+.text-form-container {
+  position: relative;
+  width: 100%;
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: $gray-3;
+  font-size: 0.8rem;
+}
+
+.label {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.length {
+  color: $gray-3;
+}

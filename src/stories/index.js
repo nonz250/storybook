@@ -6,6 +6,7 @@ import ListPage from './pages/ListPage';
 import StepperPage from './pages/StepperPage';
 import NavDrawerPage from './pages/NavDrawerPage';
 import NavigatorPage from './pages/NavigatorPage';
+import InputPage from './pages/InputPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -39,6 +40,12 @@ storiesOf('Button', module)
   .add('danger-outline', () => ({
     components: {AtomButton},
     template: '<AtomButton danger outline/>'
+  }));
+
+storiesOf('Inputs', module)
+  .add('default', () => ({
+    components: {InputPage},
+    template: '<InputPage />'
   }));
 
 storiesOf('List', module)

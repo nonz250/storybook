@@ -1,0 +1,86 @@
+<template>
+  <div class="text-form-container">
+    <label class="label">
+      <input
+        v-model="text"
+        type="text"
+        :class="inputClass"
+        :placeholder="placeholder"
+        :maxlength="100"
+      >
+    </label>
+    <div class="description row">
+      <div class="col-10">
+        {{ description }}
+      </div>
+      <div class="col-2">
+        <span class="length">{{ value.length + '/' + max }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'AtomInputText',
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+    primary: {
+      type: Boolean,
+      default: false
+    },
+    warning: {
+      type: Boolean,
+      default: false
+    },
+    danger: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    max: {
+      type: Number,
+      default: 100,
+    },
+    description: {
+      type: String,
+      default: '',
+    }
+  },
+  computed: {
+    inputClass() {
+      const result = {'text-form': true};
+      let color = '';
+      if (this.primary) {
+        color = 'primary';
+      } else if (this.warning) {
+        color = 'warning';
+      } else if (this.danger) {
+        color = 'danger';
+      } else {
+        color = 'default';
+      }
+      result['text-form__' + color] = true;
+      return result;
+    },
+    text: {
+      get() {
+        return this.value;
+      },
+      set(value) {
+        this.$emit('input', value);
+      }
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+    @import "../../sass/app";
+</style>
