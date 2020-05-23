@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="nav-drawer__item p-2">
+    <div
+      class="nav-drawer__item p-2"
+      @click="this.$emit('click')"
+    >
       <slot />
     </div>
   </div>
