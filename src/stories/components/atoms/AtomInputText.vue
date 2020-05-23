@@ -3,10 +3,10 @@
     <label class="label">
       <input
         v-model="text"
-        type="text"
+        :type="type"
         :class="inputClass"
         :placeholder="placeholder"
-        :maxlength="100"
+        :maxlength="max"
       >
     </label>
     <div class="description row">
@@ -51,7 +51,15 @@ export default {
     description: {
       type: String,
       default: '',
-    }
+    },
+    password: {
+      type: Boolean,
+      default: false,
+    },
+    email: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     inputClass() {
@@ -69,6 +77,14 @@ export default {
       result['text-form__' + color] = true;
       return result;
     },
+    type() {
+      if (this.password) {
+        return 'password';
+      } else if (this.email) {
+        return 'email';
+      }
+      return 'text';
+    },
     text: {
       get() {
         return this.value;
@@ -82,5 +98,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import "../../sass/app";
+  @import "../../sass/app";
 </style>

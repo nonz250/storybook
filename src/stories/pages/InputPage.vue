@@ -23,6 +23,32 @@
         input: {{ errored }}
       </div>
     </div>
+    <div class="row">
+      <div class="col m-3">
+        <atom-input-text
+          v-model="password"
+          placeholder="placeholder"
+          description="description"
+          password
+        />
+      </div>
+      <div class="col m-3">
+        password: {{ password }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m-3">
+        <atom-input-text
+          v-model="email"
+          placeholder="placeholder"
+          description="description"
+          email
+        />
+      </div>
+      <div class="col m-3">
+        email: {{ email }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +62,8 @@ export default {
     return {
       text: '',
       errored: '',
+      password: '',
+      email: '',
     };
   }
 };
