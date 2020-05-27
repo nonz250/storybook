@@ -2,6 +2,7 @@ import {storiesOf} from '@storybook/vue';
 
 // storybook components
 import AtomButton from './components/atoms/AtomButton';
+import AtomRadio from './components/atoms/AtomRadio';
 import ListPage from './pages/ListPage';
 import StepperPage from './pages/StepperPage';
 import NavDrawerPage from './pages/NavDrawerPage';
@@ -41,6 +42,12 @@ storiesOf('Button', module)
   .add('danger-outline', () => ({
     components: {AtomButton},
     template: '<AtomButton danger outline/>'
+  }));
+
+storiesOf('Radio', module)
+  .add('default', () => ({
+    components: {AtomRadio},
+    template: '<AtomRadio/>'
   }));
 
 storiesOf('Inputs', module)
