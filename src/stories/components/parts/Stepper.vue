@@ -1,25 +1,31 @@
 <template>
-  <div>
-    <div
+  <div class="stepper">
+    <template
       v-for="(step, index) in steps"
-      :key="index"
-      class="step"
     >
       <div
         v-if="index !== 0"
         class="step-line"
         :class="{'step-line__complete': isActive(index) || isComplete(index), 'step-line__failed': isFailed(index)}"
       />
-      <span 
-        class="step-number"
-        :class="{'step-number__active': isActive(index), 'step-number__failed': isFailed(index), 'step-number__complete': isComplete(index)}"
-      >
-        <span v-if="isFailed(index)">✕</span>
-        <span v-else-if="index + 1 === steps.length">✓</span>
-        <span v-else>{{ index + 1 }}</span>
+
+      <span class="step-number-wrap">
+        <span
+          class="step-number"
+          :class="{'step-number__active': isActive(index), 'step-number__failed': isFailed(index), 'step-number__complete': isComplete(index)}"
+        >
+          <span v-if="isFailed(index)">✕</span>
+          <span v-else-if="index + 1 === steps.length">✓</span>
+          <span v-else>{{ index + 1 }}</span>
+        </span>
+        <span
+          class="step-text"
+          :class="{'step-text__active': isActive(index), 'step-text__failed': isFailed(index), 'step-text__complete': isComplete(index)}"
+        >
+          {{ step.text }}
+        </span>
       </span>
-      <span class="step-text">{{ step.text }}</span>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -55,55 +61,97 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$step_color: blue;
-$step_default_color: gray;
-$step_failed_color: red;
-.step {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-.step-line {
-  display: inline-block;
-  min-width: 100px;
-  margin-bottom: calc(0.5rem - 1px);
-  margin-right: 1rem;
-  margin-left: 1rem;
-  border-top: 1px $step_default_color solid;
-  &__complete {
-    border-top: 1px $step_color solid;
+.stepper {
+  $step_color: blue;
+  $step_default_color: gray;
+  $step_failed_color: red;
+
+  $step_text_default_color: #ddd;
+  $step_text_active_color: #000;
+
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+
+  .step-line {
+    display: block;
+    border-top: 1px $step_default_color solid;
+    margin: 0 0.5rem;
+    align-self: center;
+    flex: 1 1 0;
+    max-width: 100%;
+
+    &__complete {
+      border-top: 1px $step_color solid;
+    }
+
+    &__failed {
+      border-top: 1px $step_failed_color solid;
+    }
   }
-  &__failed {
-    border-top: 1px $step_failed_color solid;
+
+  .step-number-wrap {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+
+    .step-number {
+      width: calc(2rem + 2px);
+      line-height: 2rem;
+      margin: 0 -2px;
+      text-align: center;
+      display: inline-block;
+      color: $step_default_color;
+      border: 1px solid $step_default_color;
+      border-radius: 50%;
+      background-color: white;
+
+      &__complete {
+        color: $step_color;
+        border: 1px solid $step_color;
+      }
+
+      &__active {
+        color: white;
+        border: 1px solid $step_color;
+        background-color: $step_color;
+      }
+
+      &__failed {
+        color: white;
+        border: 1px solid $step_failed_color;
+        background-color: $step_failed_color;
+      }
+    }
+
+    .step-text {
+      font-weight: bold;
+      margin-left: 0.5rem;
+      color: $step_text_default_color;
+      &__complete {
+        color: $step_text_active_color;
+      }
+
+      &__active {
+        color: $step_text_active_color;
+      }
+
+      &__failed {
+      }
+    }
   }
-}
-.step-number {
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
-  padding: 0.3rem;
-  text-align: center;
-  display: inline-block;
-  color: $step_default_color;
-  border: 1px solid $step_default_color;
-  border-radius: 50%;
-  background-color: white;
-  &__complete {
-    color: $step_color;
-    border: 1px solid $step_color;
+
+  //スマホの場合はテキスト無し
+  @media only screen and (max-width: 768px) {
+    .step-number-wrap {
+      flex: none;
+      .step-text {
+        display: none;
+      }
+    }
   }
-  &__active {
-    color: white;
-    border: 1px solid $step_color;
-    background-color: $step_color;
-  }
-  &__failed {
-    color: white;
-    border: 1px solid $step_failed_color;
-    background-color: $step_failed_color;
-  }
-}
-.step-text {
-  font-weight: bold;
 }
 </style>
