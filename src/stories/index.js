@@ -7,6 +7,7 @@ import StepperPage from './pages/StepperPage';
 import NavDrawerPage from './pages/NavDrawerPage';
 import NavigatorPage from './pages/NavigatorPage';
 import InputPage from './pages/InputPage';
+import PanelPage from './pages/PanelPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -46,6 +47,12 @@ storiesOf('Inputs', module)
   .add('default', () => ({
     components: {InputPage},
     template: '<InputPage />'
+  }));
+
+storiesOf('Panel', module)
+  .add('default', () => ({
+    components: {PanelPage},
+    template: '<PanelPage />'
   }));
 
 storiesOf('List', module)

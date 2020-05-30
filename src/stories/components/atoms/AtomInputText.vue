@@ -11,6 +11,7 @@
       >
     </label>
     <div
+      v-if="!panel"
       class="row"
       :class="descriptionClass"
     >
@@ -72,10 +73,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    panel: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     inputClass() {
-      const result = {'text-form': true};
+      const result = {};
+      let basic = 'text-form';
+      basic = this.panel ? basic + '-panel' : basic;
+      result[basic] = true;
       let color = '';
       if (this.primary) {
         color = 'primary';
@@ -92,7 +100,7 @@ export default {
       if (this.error) {
         color = 'danger';
       }
-      result['text-form__' + color] = true;
+      result[basic + '__' + color] = true;
       return result;
     },
     descriptionClass() {

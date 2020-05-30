@@ -14,6 +14,19 @@
     <div class="row">
       <div class="col m-3">
         <atom-input-text
+          v-model="text"
+          placeholder="placeholder"
+          description="description"
+          panel
+        />
+      </div>
+      <div class="col m-3">
+        panel: {{ text }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m-3">
+        <atom-input-text
           v-model="errored"
           placeholder="errored"
           description="errored"
