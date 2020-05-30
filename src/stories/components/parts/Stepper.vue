@@ -5,11 +5,15 @@
     >
       <div
         v-if="index !== 0"
+        :key="index"
         class="step-line"
         :class="{'step-line__complete': isActive(index) || isComplete(index), 'step-line__failed': isFailed(index)}"
       />
 
-      <span class="step-number-wrap">
+      <span
+        :key="index"
+        class="step-number-wrap"
+      >
         <span
           class="step-number"
           :class="{'step-number__active': isActive(index), 'step-number__failed': isFailed(index), 'step-number__complete': isComplete(index)}"

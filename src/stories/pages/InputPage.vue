@@ -15,12 +15,13 @@
       <div class="col m-3">
         <atom-input-text
           v-model="errored"
-          placeholder="placeholder"
-          description="description"
+          placeholder="errored"
+          description="errored"
+          error
         />
       </div>
       <div class="col m-3">
-        input: {{ errored }}
+        errored: {{ errored }}
       </div>
     </div>
     <div class="row">
@@ -49,6 +50,19 @@
         email: {{ email }}
       </div>
     </div>
+    <div class="row">
+      <div class="col m-3">
+        <atom-input-text
+          v-model="length"
+          description="文字長でバリデーションがかかります"
+          :max="16"
+          :min="6"
+        />
+      </div>
+      <div class="col m-3">
+        length: {{ length }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -64,6 +78,7 @@ export default {
       errored: '',
       password: '',
       email: '',
+      length: '',
     };
   }
 };

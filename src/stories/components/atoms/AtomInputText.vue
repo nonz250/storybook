@@ -7,9 +7,13 @@
         :class="inputClass"
         :placeholder="placeholder"
         :maxlength="max"
+        :minlength="min"
       >
     </label>
-    <div class="description row">
+    <div
+      class="row"
+      :class="descriptionClass"
+    >
       <div class="col-10">
         {{ description }}
       </div>
@@ -48,6 +52,10 @@ export default {
       type: Number,
       default: 100,
     },
+    min: {
+      type: Number,
+      default: 0,
+    },
     description: {
       type: String,
       default: '',
@@ -57,6 +65,10 @@ export default {
       default: false,
     },
     email: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
       type: Boolean,
       default: false,
     },
@@ -74,7 +86,25 @@ export default {
       } else {
         color = 'default';
       }
+      if (this.value.length > 0 && this.value.length < this.min) {
+        color = 'danger';
+      }
+      if (this.error) {
+        color = 'danger';
+      }
       result['text-form__' + color] = true;
+      return result;
+    },
+    descriptionClass() {
+      const result = {'description': true};
+      let color = 'default';
+      if (this.value.length > 0 && this.value.length < this.min) {
+        color = 'danger';
+      }
+      if (this.error) {
+        color = 'danger';
+      }
+      result['description__' + color] = true;
       return result;
     },
     type() {
