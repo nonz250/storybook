@@ -11,7 +11,7 @@
         :outline="!radio"
         style="pointer-events: none;"
       >
-        ラジオボタン
+        <slot />
       </atom-button>
     </label>
   </div>

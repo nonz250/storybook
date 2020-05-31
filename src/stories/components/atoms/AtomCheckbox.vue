@@ -8,7 +8,7 @@
       ><atom-button
         :outline="!check"
         style="pointer-events: none;"
-      >チェックボックス</atom-button>
+      ><slot /></atom-button>
     </label>
   </div>
 </template>
@@ -16,7 +16,7 @@
 <script>
 import AtomButton from './AtomButton';
 export default {
-  name: 'AtomCheckBox',
+  name: 'AtomCheckbox',
   components: {AtomButton},
   props: {
     value: {

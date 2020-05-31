@@ -2,14 +2,14 @@
   <div>
     <div class="row">
       <div class="col">
-        <atom-check-box v-model="check1" />check1: {{ check1 }}
+        <atom-checkbox v-model="check1" />check1: {{ check1 }}
       </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="button-group">
-          <atom-check-box v-model="check2" />
-          <atom-check-box v-model="check3" />
+          <atom-checkbox v-model="check2" />
+          <atom-checkbox v-model="check3" />
         </div>
       </div>
     </div>
@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import AtomCheckBox from '../components/atoms/AtomCheckBox';
+import AtomCheckbox from '../components/atoms/AtomCheckbox';
 
 export default {
   name: 'CheckBoxPage',
-  components: {AtomCheckBox},
+  components: {AtomCheckbox},
   data() {
     return {
       check1: false,
