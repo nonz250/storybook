@@ -5,10 +5,11 @@
         v-model="radio"
         type="radio"
         class="radio"
-      ><atom-button
+        :value="true"
+      >
+      <atom-button
         :outline="!radio"
         style="pointer-events: none;"
-        @click="radio = true"
       >
         ラジオボタン
       </atom-button>
