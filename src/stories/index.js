@@ -2,7 +2,7 @@ import {storiesOf} from '@storybook/vue';
 
 // storybook components
 import AtomButton from './components/atoms/AtomButton';
-import AtomRadio from './components/atoms/AtomRadio';
+import RadioPage from './pages/RadioPage';
 import ListPage from './pages/ListPage';
 import StepperPage from './pages/StepperPage';
 import NavDrawerPage from './pages/NavDrawerPage';
@@ -46,8 +46,8 @@ storiesOf('Button', module)
 
 storiesOf('Radio', module)
   .add('default', () => ({
-    components: {AtomRadio},
-    template: '<AtomRadio/>'
+    components: {RadioPage},
+    template: '<RadioPage/>'
   }));
 
 storiesOf('Inputs', module)
