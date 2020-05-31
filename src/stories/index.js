@@ -9,6 +9,7 @@ import NavDrawerPage from './pages/NavDrawerPage';
 import NavigatorPage from './pages/NavigatorPage';
 import InputPage from './pages/InputPage';
 import PanelPage from './pages/PanelPage';
+import CheckBoxPage from './pages/CheckBoxPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -44,7 +45,7 @@ storiesOf('Button', module)
     template: '<AtomButton danger outline/>'
   }));
 
-storiesOf('Radio', module)
+storiesOf('Radios', module)
   .add('default', () => ({
     components: {RadioPage},
     template: '<RadioPage/>'
@@ -54,6 +55,12 @@ storiesOf('Inputs', module)
   .add('default', () => ({
     components: {InputPage},
     template: '<InputPage />'
+  }));
+
+storiesOf('CheckBoxes', module)
+  .add('default', () => ({
+    components: {CheckBoxPage},
+    template: '<CheckBoxPage />'
   }));
 
 storiesOf('Panel', module)
