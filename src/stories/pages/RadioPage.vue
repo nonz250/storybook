@@ -1,11 +1,11 @@
 <template>
   <div>
     <div>
-      <atom-radio />
+      <atom-radio v-model="radio1" />radio1: {{ radio1 }}
     </div>
-    <div class="">
-      <atom-radio />
-      <atom-radio />
+    <div class="button-group">
+      <atom-radio v-model="radio2" />radio2: {{ radio2 }}
+      <atom-radio v-model="radio3" />radio3: {{ radio3 }}
     </div>
   </div>
 </template>
@@ -14,7 +14,14 @@
 import AtomRadio from '../components/atoms/AtomRadio';
 export default {
   name: 'RadioPage',
-  components: {AtomRadio}
+  components: {AtomRadio},
+  data(){
+    return {
+      radio1: false,
+      radio2: false,
+      radio3: false,
+    };
+  }
 };
 </script>
 
