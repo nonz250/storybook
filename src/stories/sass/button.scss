@@ -49,3 +49,7 @@
     @include button-color($red, white, $light-red);
   }
 }
+
+.button-group {
+  display: inline-flex;
+}
