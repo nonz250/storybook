@@ -1,12 +1,18 @@
 <template>
   <div>
-    <input type="radio">ラジオボタン
+    <input
+      type="radio"
+      class="radio"
+    ><atom-button>ラジオボタン</atom-button>
   </div>
 </template>
 <script>
+import AtomButton from './AtomButton';
 export default {
-  name: 'AtomRadio'
+  name: 'AtomRadio',
+  components: {AtomButton}
 };
 </script>
-<style>
+<style lang="scss" scoped>
+  @import "../../sass/app";
 </style>
