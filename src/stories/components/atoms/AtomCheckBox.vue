@@ -8,7 +8,6 @@
       ><atom-button
         :outline="!check"
         style="pointer-events: none;"
-        @click="check = !check"
       >チェックボックス</atom-button>
     </label>
   </div>
