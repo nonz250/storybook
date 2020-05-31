@@ -8,9 +8,15 @@
     <div class="row">
       <div class="col">
         <div class="button-group">
-          <atom-check-box v-model="check2" />check2: {{ check2 }}
-          <atom-check-box v-model="check3" />check3: {{ check3 }}
+          <atom-check-box v-model="check2" />
+          <atom-check-box v-model="check3" />
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        check2: {{ check2 }}
+        check3: {{ check3 }}
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-@mixin button-color($color, $text-color, $bg-color) {
+@mixin button-color($color, $text-color, $bg-color, $b-color) {
   border: 1px solid $color;
   background-color: $color;
   filter: drop-shadow(0.8px 0.8px 0.8px $color);
@@ -29,24 +29,23 @@
 }
 
 .button {
-  border-radius: 3px;
   padding: 0.1rem 1rem;
   outline: none;
 
   &__default {
-    @include button-color($gray-5, $gray-1, $gray-1);
+    @include button-color($gray-5, $gray-1, $gray-1, white);
   }
 
   &__primary {
-    @include button-color($blue, white, $light-blue);
+    @include button-color($blue, white, $light-blue, white);
   }
 
   &__warning {
-    @include button-color($orange, white, $light-orange);
+    @include button-color($orange, white, $light-orange, white);
   }
 
   &__danger {
-    @include button-color($red, white, $light-red);
+    @include button-color($red, white, $light-red, white);
   }
 }
 

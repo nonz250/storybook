@@ -1,11 +1,23 @@
 <template>
   <div>
-    <div>
-      <atom-radio v-model="radio1" />radio1: {{ radio1 }}
+    <div class="row">
+      <div class="col">
+        <atom-radio v-model="radio1" />radio1: {{ radio1 }}
+      </div>
     </div>
-    <div class="button-group">
-      <atom-radio v-model="radio2" />radio2: {{ radio2 }}
-      <atom-radio v-model="radio3" />radio3: {{ radio3 }}
+    <div class="row">
+      <div class="col">
+        <div class="button-group">
+          <atom-radio v-model="radio2" />
+          <atom-radio v-model="radio3" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        radio2: {{ radio2 }}
+        radio3: {{ radio3 }}
+      </div>
     </div>
   </div>
 </template>
