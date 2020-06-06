@@ -43,6 +43,18 @@ storiesOf('Button', module)
   .add('danger-outline', () => ({
     components: {AtomButton},
     template: '<AtomButton danger outline/>'
+  }))
+  .add('block', () => ({
+    components: {AtomButton},
+    template: '<AtomButton block/>'
+  }))
+  .add('large', () => ({
+    components: {AtomButton},
+    template: '<AtomButton large/>'
+  }))
+  .add('large and block', () => ({
+    components: {AtomButton},
+    template: '<AtomButton large block/>'
   }));
 
 storiesOf('Radios', module)
