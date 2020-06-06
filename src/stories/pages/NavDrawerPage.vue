@@ -6,6 +6,15 @@
     >
       <nav-drawer-item>test01</nav-drawer-item>
       <nav-drawer-item>test02</nav-drawer-item>
+      <atom-button
+        outline
+        primary
+        block
+        large
+      >
+        test03
+      </atom-button>
+      <nav-drawer-item>test04</nav-drawer-item>
     </nav-drawer>
     <div>
       <atom-button
