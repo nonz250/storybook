@@ -47,6 +47,14 @@
   &__danger {
     @include button-color($red, white, $light-red, white);
   }
+
+  &__block {
+    width: 100%;
+  }
+
+  &__large {
+    padding: 0.5rem;
+  }
 }
 
 .button-group {

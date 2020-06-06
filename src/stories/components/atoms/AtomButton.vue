@@ -27,6 +27,14 @@ export default {
       type: Boolean,
       default: false
     },
+    block: {
+      type: Boolean,
+      default: false,
+    },
+    large: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     buttonClass() {
@@ -43,6 +51,8 @@ export default {
       }
       result['button__' + color] = true;
       result['button__' + color + '__outline'] = this.outline;
+      result['button__block'] = this.block;
+      result['button__large'] = this.large;
       return result;
     },
   },
