@@ -10,6 +10,7 @@ import NavigatorPage from './pages/NavigatorPage';
 import InputPage from './pages/InputPage';
 import PanelPage from './pages/PanelPage';
 import CheckBoxPage from './pages/CheckBoxPage';
+import SelectPage from './pages/SelectPage';
 
 storiesOf('Button', module)
   .add('default', () => ({
@@ -103,4 +104,10 @@ storiesOf('Navigator', module)
   .add('default', () => ({
     components: {NavigatorPage},
     template: '<navigator-page></navigator-page>'
+  }));
+
+storiesOf('Selects', module)
+  .add('default', () => ({
+    components: {SelectPage},
+    template: '<select-page></select-page>'
   }));
