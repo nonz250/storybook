@@ -1,9 +1,11 @@
 <template>
-  <select>
-    <option>a</option>
-    <option>b</option>
-    <option>c</option>
-  </select>
+  <div class="select-container">
+    <select class="select">
+      <option>a</option>
+      <option>b</option>
+      <option>c</option>
+    </select>
+  </div>
 </template>
 
 <script>
@@ -12,5 +14,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "../../sass/app";
 </style>
