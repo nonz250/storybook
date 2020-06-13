@@ -6,13 +6,16 @@
 @import "./panel.scss";
 @import "./radio.scss";
 @import "./checkbox.scss";
-
-.m-1 {
-  margin: 0.5rem;
-}
+@import "./list.scss";
 
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
 }
 
 .link {

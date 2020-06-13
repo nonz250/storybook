@@ -1,16 +1,16 @@
 <template>
   <div>
-    <list
-      :lists="lists"
-      footer
-    >
+    <list :lists="lists">
       <template #default="list">
         {{ list.content.name }}
       </template>
       <template #footer>
-        <slot name="footer">
+        フッター
+      </template>
+      <template #footer_action>
+        <slot name="footer_action">
           <div
-            class="text-center link"
+            class="text-right link"
             @click="clickAddList"
           >
             リストを追加

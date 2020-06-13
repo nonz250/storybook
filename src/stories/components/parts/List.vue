@@ -1,61 +1,57 @@
 <template>
-  <div class="list">
-    <div
-      v-if="header"
-      class="list-item"
-    >
+  <panel>
+    <template #header>
       <slot name="header" />
-    </div>
-    <div
-      v-for="(list, index) in lists"
-      :key="index"
-      class="list-item"
-    >
-      <slot :content="list" />
-    </div>
-    <div
-      v-if="footer"
-      class="list-item"
-    >
+    </template>
+    <template #header_action>
+      <slot name="header_action" />
+    </template>
+    <template #body>
+      <div
+        v-for="(list, index) in lists"
+        :key="index"
+        class="list-line"
+      >
+        <slot :content="list" />
+      </div>
+    </template>
+    <template #footer>
       <slot name="footer" />
-    </div>
-  </div>
+    </template>
+    <template #footer_action>
+      <slot name="footer_action" />
+    </template>
+  </panel>
 </template>
 
 <script>
+import Panel from './Panel';
 export default {
   name: 'List',
+  components: {Panel},
   props: {
-    header: {
-      type: Boolean,
-      default: false,
-    },
-    footer: {
-      type: Boolean,
-      default: false,
-    },
     lists: {
       type: Array,
       required: true,
+    }
+  },
+  computed: {
+    header() {
+      return this.$slots.header || this.$slots.header_action;
+    },
+    headerAction() {
+      return this.$slots.header_action;
+    },
+    footer() {
+      return this.$slots.footer || this.$slots.footer_action;
+    },
+    footerAction() {
+      return this.$slots.footer_action;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-    .list {
-        list-style: none;
-        margin: 0;
-        border: black solid 1px;
-        border-radius: 5px;
-
-        .list-item {
-            padding: 0.5rem;
-            border-bottom: black solid 1px;
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-    }
+@import "src/stories/sass/app";
 </style>
